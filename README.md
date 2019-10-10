@@ -8,4 +8,4 @@ define('DB_USERNAME', 'course');
 define('DB_PASSWORD', 'course123');
 define('DB_NAME', 'course');
 ```
-Denna fil har jag valt att inte inkludera i repot för att skydda lösenordet.
+Denna fil har jag valt att inte inkludera i repot för att skydda lösenordet. Vill man testköra projektet så får man isåfall skapa properties.php manuellt och fylla i databasuppgifterna på egen hand.
