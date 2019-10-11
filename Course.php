@@ -23,7 +23,7 @@ class Course {
 
         $stmt = $this->db->prepare("INSERT INTO courses(name, code, progression, syllabus) VALUES(?, ?, ?, ?)");
 
-        $stmt->bind_param("ssss", $name, $code, $progression, $syllabus);
+        $stmt->bind_param("ssss", strip_tags($name), strip_tags($code), strip_tags($progression), strip_tags($syllabus));
 
         $result = $stmt->execute();
         if($stmt->error) { echo $stmt->error; }
@@ -52,7 +52,7 @@ class Course {
         }
 
         $stmt = $this->db->prepare("UPDATE courses SET name=?, code=?, progression=?, syllabus=? WHERE id = ?;");
-        $stmt->bind_param("ssssd", $name, $code, $progression, $syllabus, $id);
+        $stmt->bind_param("ssssd", strip_tags($name), strip_tags($code), strip_tags($progression), strip_tags($syllabus), strip_tags($id));
 
         $result = $stmt->execute();
         if($stmt->error) { echo $stmt->error; }
